@@ -1,0 +1,118 @@
+#banner_section {
+    width: 80%;
+    max-width: 1440px;
+    margin: 6rem auto;
+
+}
+
+.banner_container {
+    /* width: 100%; */
+    display: flex;
+    /* align-items: center; */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* justify-content: center; */
+    background-color: #fff;
+    box-shadow: 0px 4px 4px 2px lightgray;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.banner_info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.banner_info .discount {
+    width: 240px;
+    height: 25px;
+    box-shadow: 0px 2px 4px 2px var(--main-color);
+    border-radius: 10px;
+    padding: 4px 1rem;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--main-color);
+
+}
+
+.banner_info .banner_title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.banner_info .banner_buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.banner_buttons .btn {
+    font-weight: 600;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 4px 2px lightgray;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.banner_buttons .btn:first-child {
+    width: 100px;
+    height: 40px;
+    background-color: var(--some-cards_color);
+
+}
+.banner_buttons .btn:first-child:hover{
+    background-color: white;
+    color: var(--some-cards_color);
+    box-shadow: 0px 4px 4px 2px var(--some-cards_color);
+}
+.banner_buttons .btn:last-child {
+    width: 142px;
+    height: 40px;
+    background-color: white;
+    color: var(--main-color);
+
+}
+.banner_buttons .btn:last-child:hover{
+    background-color: var(--main-color);
+    color: white;
+    box-shadow: 0px 4px 4px 2px var(--main-color);
+}
+
+.banner_img {
+    width: 450px;
+    height: 400px;
+
+}
+
+.banner_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (max-width:1024px) {
+    .banner_container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+}
+@media (max-width:576px) {
+    .banner_container .banner_img{
+        width: 350px;
+        height: 350px;
+    }
+}
+@media (min-width:220px)  and (max-width:490px){
+    .banner_container .banner_img{
+        width: 290px;
+        height: 290px;
+        position: relative;
+        left: -20px;
+    }
+}

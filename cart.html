@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="style/top_header.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/cart.css">
+</head>
+<body>
+    <div id="top_header_section">
+        <div class="top_container">
+            <div class="topnav_items">
+                <div class="icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="info">
+                    <p><a href="#">Location</a></p>
+                </div>
+            </div>
+            <div class="topnav_items">
+                <!-- <div class="icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div> -->
+                <div class="info">
+                    <p><a href="#">Free shipping on orders over $500 | 24/7 Customer Support</a></p>
+                </div>
+            </div>
+            <div class="topnav_items">
+                <!-- <div class="icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div> -->
+                <div class="info">
+                    <p><a href="#">Questions&Answers</a></p>
+                </div>
+            </div>
+            <div class="topnav_items">
+                <!-- <div class="icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div> -->
+                <div class="info">
+                    <p><a href="#">My Orders</a></p>
+                </div>
+            </div>
+            <div class="topnav_items">
+                <div class="icon">
+                    <img src="img/united-states (2).png" alt="">
+                </div>
+                <div class="info">
+                    <p><a href="#">Eng</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <header id="header_section">
+        <div class="header_container">
+            <div class="top_navigation">
+                <div class="logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <nav class="header_nav">
+                    <ul>
+                        <li class="nav_items"><a href="index.html">Home</a></li>
+                        <li class="nav_items"><a href="about.html">About</a></li>
+                        <li class="nav_items"><a href="services.html">Services</a></li>
+                        <li class="nav_items"><a href="products.html">Products</a></li>
+                        <li class="nav_items"><a href="locations.html">Locations</a></li>
+                        <li class="nav_items"><a href="contactUs.html">Contact us</a></li>
+                    </ul>
+                </nav>
+                <div class="icon_group">
+                    <div class="icon_items">
+                        <a href="favorites.html"><i class="bi bi-heart"></i></a>
+                    </div>
+                    <div class="icon_items">
+                        <a href="cart.html"> <i class="bi bi-cart3"></i></a>
+                    </div>
+                    <div class="icon_items">
+                        <a href="account.html"><i class="bi bi-person"></i></a>
+                    </div>
+                    <div class="icon_items menu">
+                        <a href=""><i class="bi bi-list"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <div class="search_section">
+                <div class="catalog">
+                    <a href="#"><img src="img/catalog 1.png" alt=""></a>
+                </div>
+                <div class="search">
+                    <div class="icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="Search Products">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="cart_section">
+        <div class="cart_container">
+            <div class="cart_title">
+                Your Cart , <span class="cartitems"> 4 items</span>
+            </div>
+            <div class="cart_banner">
+                <div class="cart_products">
+                    <div class="cart_products_title">
+                        <div class="title_input">
+                            <input type="checkbox">
+                        </div>
+                        <div class="title_label">
+                            <label> Select All</label>
+                        </div>
+                        
+                    </div>
+                    <div class="cart_products_items">
+                        <div class="cart_products_items_title">
+                            We will deliver it tomorrow
+                        </div>
+                        <div class="cart_product">
+                            <div class="cart_select">
+                                <input type="checkbox" id="item">
+                            </div>
+                            <div class="cart_products_list">
+                                <div class="cart_products_img">
+                                    <img src="img/delivery_img.png" alt="">
+                                </div>
+                                <div class="cart_products_info">
+                                    <div class="product_name">
+                                        High-Speed Blender Pro
+                                    </div>
+                                    <div class="product_des">
+                                        Powerful blender for smoothies, shakes, and sauces.
+                                    </div>
+                                    <div class="delivery_more_info">
+                                        <div class="quantity">
+                                            <button>-</button>
+                                            <button>1</button>
+                                            <button>+</button>
+                                        </div>
+                                        <div class="product_price">
+                                            $299.99$  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart_products_items">
+                        <div class="cart_products_items_title">
+                            We will deliver it tomorrow
+                        </div>
+                        <div class="cart_product">
+                            <div class="cart_select">
+                                <input type="checkbox" id="item">
+                            </div>
+                            <div class="cart_products_list">
+                                <div class="cart_products_img">
+                                    <img src="img/delivery_img.png" alt="">
+                                </div>
+                                <div class="cart_products_info">
+                                    <div class="product_name">
+                                        High-Speed Blender Pro
+                                    </div>
+                                    <div class="product_des">
+                                        Powerful blender for smoothies, shakes, and sauces.
+                                    </div>
+                                    <div class="delivery_more_info">
+                                        <div class="quantity">
+                                            <button>-</button>
+                                            <button>1</button>
+                                            <button>+</button>
+                                        </div>
+                                        <div class="product_price">
+                                            $299.99$  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart_products_items">
+                        <div class="cart_products_items_title">
+                            We will deliver it tomorrow
+                        </div>
+                        <div class="cart_product">
+                            <div class="cart_select">
+                                <input type="checkbox" id="item">
+                            </div>
+                            <div class="cart_products_list">
+                                <div class="cart_products_img">
+                                    <img src="img/delivery_img.png" alt="">
+                                </div>
+                                <div class="cart_products_info">
+                                    <div class="product_name">
+                                        High-Speed Blender Pro
+                                    </div>
+                                    <div class="product_des">
+                                        Powerful blender for smoothies, shakes, and sauces.
+                                    </div>
+                                    <div class="delivery_more_info">
+                                        <div class="quantity">
+                                            <button>-</button>
+                                            <button>1</button>
+                                            <button>+</button>
+                                        </div>
+                                        <div class="product_price">
+                                            $299.99$  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart_products_items">
+                        <div class="cart_products_items_title">
+                            We will deliver it tomorrow
+                        </div>
+                        <div class="cart_product">
+                            <div class="cart_select">
+                                <input type="checkbox" id="item">
+                            </div>
+                            <div class="cart_products_list">
+                                <div class="cart_products_img">
+                                    <img src="img/delivery_img.png" alt="">
+                                </div>
+                                <div class="cart_products_info">
+                                    <div class="product_name">
+                                        High-Speed Blender Pro
+                                    </div>
+                                    <div class="product_des">
+                                        Powerful blender for smoothies, shakes, and sauces.
+                                    </div>
+                                    <div class="delivery_more_info">
+                                        <div class="quantity">
+                                            <button>-</button>
+                                            <button>1</button>
+                                            <button>+</button>
+                                        </div>
+                                        <div class="product_price">
+                                            $299.99$  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calc_part">
+                    <div class="calc_title">
+                        Your Orders
+
+                    </div>
+                    <div class="calc_subtitle">
+                        <div class="right">
+                            Items(4)
+                        </div>
+                        <div class="left">$0</div>
+                    </div>
+                    <div class="calc_title">
+                        Total
+
+                    </div>
+                    <div class="calc_subtitle">
+                        <div class="right">
+                            Items(4)
+                        </div>
+                        <div class="left">$1200</div>
+                    </div>
+                    <div class="calc_btn">
+                       <a href="payment.html"> <button class="btn">Continue to process</button></a> 
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <footer id="footer_section">
+        <div class="footer_container">
+            <div class="footer_title">
+                Stay Updated
+            </div>
+            <div class="footer_subtitle">Subscribe to get exclusive offers, product launches, and tech tips.
+
+            </div>
+            <div class="footer_contact">
+                <div class="contact_input">
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="contact_btn">
+                    <button class="btn">Subscribe</button>
+                </div>
+            </div>
+            <div class="footer_line"></div>
+            <div class="footer_main_info">
+                <div class="main_info_items items1">
+                    <div class="item_title">
+                        <div class="item_logo">
+                            <img src="img/logo.png" alt="">
+                        </div>
+                        <div class="logo_info">
+                            Tech House
+                        </div>
+                    </div>
+                    <div class="item_subtitle">
+                        Your trusted partner for home appliances since
+                        2010. Quality products, expert service.
+                    </div>
+                    <div class="item_socials">
+                        <div class="social_icons">
+                            <i class="bi bi-facebook"></i>
+                        </div>
+                        <div class="social_icons">
+                            <i class="bi bi-twitter"></i>
+                        </div>
+                        <div class="social_icons">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="social_icons">
+                            <i class="bi bi-youtube"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="main_info_items items2">
+                    <div class="item_title">
+                        Quick Links
+                    </div>
+                    <div class="item_links">
+                        <a href="#">All products</a>
+                    </div>
+                    <div class="item_links">
+                        <a href="#">Kitchen Appliances</a>
+                    </div>
+                    <div class="item_links">
+                        <a href="#">Smart Home</a>
+                    </div>
+                    <div class="item_links">
+                        <a href="#">Membership</a>
+                    </div>
+                    <div class="item_links">
+                        <a href="#">About Us</a>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="main_info_items items3">
+                    <div class="item_title">
+                        Customer Service
+                    </div>
+                    <div class="item_links">
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <div class="item_links">
+                        <a href="#">Delivery Information</a>
+                    </div>
+                    <div class="item_links">
+                        <a href="#">Returns&Refunds</a>
+                    </div>
+                    <div class="item_links">
+                        <a href="#">Warranty&Policy</a>
+                    </div>
+                    <div class="item_links">
+                        <a href="#">FAQs</a>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="main_info_items items4">
+                    <div class="item_title">
+                        Contact Us
+                    </div>
+                    <div class="item_links">
+                        <div class="item_icon_">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div class="item_info_">
+                            <a href="#">123 Oxford Street, London W1D 2LG</a>
+                        </div>
+                        
+                    </div>
+                    <div class="item_links">
+                        <div class="item_icon_">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div class="item_info_">
+                            <a href="#">0800 123 4567</a>
+                        </div>
+                        
+                    </div>
+                  <div class="item_links">
+                        <div class="item_icon_">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div class="item_info_">
+                            <a href="#">hello@techhouse.co.uk</a>
+                        </div>
+                        
+                    </div>
+                    
+                   
+                    
+                    
+
+                </div>
+            </div>
+            <div class="footer_line"></div>
+            <div class="footer_bottom">
+                <div class="left">© 2024 Tech House. All rights reserved.
+
+                </div>
+                <div class="right">
+                    Privacy Policy   Term of Service  Cookie Policy 
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

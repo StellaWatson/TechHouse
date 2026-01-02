@@ -1,0 +1,129 @@
+#main_products_section{
+    width: 80%;
+    margin: 10rem auto;
+}
+.main_products_container{
+    width: 100%;
+    display: flex;
+    align-self: start;
+    gap: 50px;
+}
+.main_products_container .products_filter{
+    /* width: 400px; */
+    flex: 1;
+    height: 140vh;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px 2px lightgray;
+    padding: 2rem;
+    border-radius: 10px;
+    
+}
+.products_filter .filter_title,
+.price_part .price_title{
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 18px;
+}
+.products_filter .price_part .price_title{
+    margin-top: 2rem;
+}
+.price_part .price_inputs{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 1.5rem;
+}
+.price_inputs .left input{
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid gray;
+    
+}
+.products_filter .price_range{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+.price_range .p_circle{
+    width: 28px;
+    height: 24px;
+    background-color: var(--some-cards_color);
+    border-radius: 50%;
+}
+.price_range .p_line{
+    width: 259px;
+    height: 3px;
+    background-color: var(--some-cards_color);
+}
+.price_subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+}
+.by_category{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.by_category .category_title{
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.main_products_container .products_part{
+    flex: 2;
+}
+.products_part .products_found_title{
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 22px;
+}
+@media (min-width:220px) and (max-width:876px) {
+    .main_products_container{
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .products_filter{
+        width: 300px;
+        font-size: 16px;
+        height: 100vh;
+    }
+}
+
+/* related_products_section */
+#related_products_section{
+    width: 80%;
+    margin: 6rem auto;
+}
+.related_products_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.related_products_title {
+    text-align: center;
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 36px;
+}
+.related_products_list{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.related_products_list .products_card{
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 2px lightgray;
+}
+/* related_products_section end */

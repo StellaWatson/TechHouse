@@ -1,0 +1,118 @@
+#loyalty_programms_section{
+    width: 80%;
+    margin: 0 auto;
+
+}
+.loyalty_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.loyalty_title_group{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 12rem;
+}
+
+
+.loyalty_title_group .loyalty_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: hsla(39, 90%, 68%, 0.515);
+    width: 200px;
+    height: 40px;
+    color: #f29f05;
+    border-radius: 10px;
+    
+}
+.loyalty_title_group .loyalty_title{
+    color: var(--main-color);
+    font-size: 36px;
+    font-weight: 600;
+}
+.loyalty_title_group .loyalty_des{
+    color: gray;
+}
+.loyalty_programms_group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    
+}
+.loyalty_programms_group .loyalty_items{
+    /* width: 340px; */
+    flex: 1 ;
+    height: 500px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 2px lightgray;
+}
+.loyalty_programms_group .gold{
+    border: 3px solid var(--some-cards_color);
+    transform: translateY(-70px);
+}
+.loyalty_items .item_title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.item_title .title_info{
+    font-size: 25px;
+    color: var(--main-color);
+    font-weight: 600;
+}
+.loyalty_items .item_des{
+display: flex;
+align-items: center;
+color: gray;
+gap: 20px;
+margin-top: 30px;
+}
+.item_des .des_icon i{
+    color: green;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.loyalty_items .item_btn{
+    text-align: center;
+    margin-top: 30px;
+}
+.loyalty_items .item_btn .btn{
+   width: 260px;
+   height: 50px;
+   border: 1px solid orange;
+    border-radius: 10px;
+    color: var(--some-cards_color);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.loyalty_programms_group .gold .item_btn .btn{
+    background-color: var(--some-cards_color);
+    color: white;
+}
+
+.loyalty_container .view_all_programs{
+    text-align: center;
+    margin-top: 40px;
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 20px;
+    transition: .3s ease;
+}
+.loyalty_container .view_all_programs:hover{
+    color: var(--some-cards_color);
+}
+@media (min-width:220px) and (max-width:1300px){
+    .loyalty_programms_group .gold{
+        transform: translateY(0);
+    }
+}
