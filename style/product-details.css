@@ -1,0 +1,384 @@
+#product-details-container.uzum-layout {
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+    display: flex;
+    gap: 32px;
+    background-color: #fff;
+    border-radius: 16px;
+    border: 1px solid #e2e5eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Gallery Section */
+.product-main-content {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.product-gallery-header {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.product-gallery-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1f2026;
+}
+
+.header-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #8b8e99;
+}
+
+.header-meta .stars {
+    color: #ff9800; /* Star Orange */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.header-meta .rating-val {
+    color: #1f2026;
+    font-weight: 600;
+}
+
+.header-meta .divider {
+    width: 1px;
+    height: 12px;
+    background: #e2e5eb;
+}
+
+.header-meta .reviews-count, .header-meta .orders-count {
+    color: #8b8e99;
+}
+
+.thumbnail-list {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.main-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.main-image img {
+    width: 100%;
+    height: 500px;
+    border-radius: 16px;
+    object-fit: contain;
+}
+
+.thumbnail-item {
+    width: 80px;
+    height: 100px;
+    border: 1px solid #e2e5eb;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.thumbnail-item.active {
+    border-color: #7000ff;
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sidebar Styles */
+.product-sidebar {
+    width: 380px;
+    flex-shrink: 0;
+    background: #fff;
+    border: 1px solid #e2e5eb;
+    border-radius: 16px;
+    padding: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar-price-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-price-label {
+    display: inline-block;
+    padding: 4px 8px;
+    background: rgba(22, 22, 111, 0.1);
+    color: var(--main-color);
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.sidebar-current-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2026;
+    margin-bottom: 4px;
+}
+
+.sidebar-old-price {
+    font-size: 14px;
+    color: #8b8e99;
+    text-decoration: line-through;
+}
+
+.installment-banner {
+    background: #f5f7fb;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.installment-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.installment-value {
+    background: #fffb00;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+/* Action Buttons */
+.sidebar-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-buy-now {
+    background: #f2f4f7;
+    color: var(--some-cards_color);
+    border: 1px solid var(--some-cards_color);
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-add-savat {
+    background: var(--some-cards_color);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.3s;
+}
+
+.btn-add-savat:hover {
+    opacity: 0.9;
+}
+
+.availability-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #1f2026;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item i {
+    font-size: 18px;
+    color: #24b23e;
+}
+
+/* Extra Info Section (Tabs) */
+#product-extra-info {
+    width: 80%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.tabs-container {
+    display: flex;
+    gap: 32px;
+    border-bottom: 1px solid #e2e5eb;
+    margin-bottom: 24px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #8b8e99;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-btn.active {
+    color: #1f2026;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1f2026;
+}
+
+#tab-content {
+    line-height: 1.6;
+    color: #1f2026;
+}
+
+/* Comments Style */
+.review-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.reviewer-name {
+    font-weight: 600;
+}
+
+.review-date {
+    color: #8b8e99;
+    font-size: 14px;
+}
+
+/* Related Products Section */
+#related-products-section {
+    width: 80%;
+    margin: 60px auto;
+}
+
+.related-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    #product-details-container.uzum-layout {
+        width: 90%;
+        flex-direction: column;
+        gap: 24px;
+        padding: 20px;
+    }
+    
+    .product-sidebar {
+        width: 100%;
+        position: static;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .product-main-content {
+        flex-direction: column;
+    }
+    
+    .thumbnail-list {
+        flex-direction: row;
+        width: 100%;
+        order: 2;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .thumbnail-item {
+        flex: 0 0 60px;
+        height: 80px;
+    }
+    
+    .main-image {
+        order: 1;
+        max-width: 100%;
+    }
+    
+    .main-image img {
+        height: 350px;
+    }
+    
+    #product-extra-info, #related-products-section {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #product-details-container.uzum-layout {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .product-gallery-header h1 {
+        font-size: 20px;
+    }
+    
+    .header-meta {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .main-image img {
+        height: 250px;
+    }
+    
+    #product-extra-info, #related-products-section {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .tabs-container {
+        gap: 16px;
+        overflow-x: auto;
+    }
+    
+    .tab-btn {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+}

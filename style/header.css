@@ -127,11 +127,60 @@ ul {
     padding-top: 1rem;
 }
 
+.catalog {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .catalog img {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     object-fit: contain;
     cursor: pointer;
+}
+
+.catalog-dropdown {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 0;
+    width: 280px;
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 1.5rem;
+    display: none;
+}
+
+.catalog-dropdown.active {
+    display: block;
+}
+
+.category-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+    color: #1f2026;
+    font-weight: 500;
+}
+
+.category-dropdown-item:hover {
+    background-color: #f5f7fb;
+    color: var(--some-cards_color);
+}
+
+.category-dropdown-item i {
+    font-size: 1.2rem;
+    color: #8b8e99;
+}
+
+.category-dropdown-item:hover i {
+    color: var(--some-cards_color);
 }
 
 .search {
@@ -145,6 +194,7 @@ ul {
     gap: 1rem;
     padding: 0 1rem;
     background-color: #fafafa;
+    position: relative;
 }
 
 .search .icon i {
@@ -154,6 +204,125 @@ ul {
 
 .search .input {
     flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Search Dropdown Styles */
+.search-results-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 1.5rem;
+    display: none;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.search-results-dropdown.active {
+    display: block;
+}
+
+.dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.dropdown-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2026;
+}
+
+.clear-history {
+    font-size: 0.9rem;
+    color: #8b8e99;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-item-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #1f2026;
+    font-weight: 500;
+}
+
+.search-item-content i {
+    color: #8b8e99;
+    font-size: 1.2rem;
+}
+
+.remove-search-item {
+    color: #8b8e99;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.product-result-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.product-result-item:hover {
+    background-color: #f8f9fa;
+}
+
+.product-result-item:last-child {
+    border-bottom: none;
+}
+
+.product-result-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background: #f5f7fb;
+    border-radius: 4px;
+}
+
+.product-result-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-result-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1f2026;
+}
+
+.product-result-price {
+    font-size: 0.85rem;
+    color: var(--some-cards_color);
+    font-weight: 700;
 }
 
 .search .input input {
@@ -276,7 +445,7 @@ ul {
 
 @media screen and (max-width: 768px) {
     #header_section {
-        width: 80%;
+        width: 95%;
         margin: 1rem auto;
     }
 
@@ -294,5 +463,19 @@ ul {
 
     .icon_items i {
         font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 2.8rem;
+    }
+    
+    .icon_group {
+        gap: 0.8rem;
+    }
+    
+    .icon_items i {
+        font-size: 1.2rem;
     }
 }

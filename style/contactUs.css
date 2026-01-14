@@ -1,181 +1,224 @@
 #contact_banner_section{
-    width: 80%;
-    margin: 5rem auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 4rem auto;
 }
 .contact_banner{
-    height: 25rem;
-    background-image: linear-gradient(hsla(0, 0%, 0%, 0.441)),
+    height: 20rem;
+    background-image: linear-gradient(hsla(0, 0%, 0%, 0.4)),
     url(../img/staff.png) ;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content:  center;
-    box-shadow: 0px 4px 4px 2px lightgray;
-    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
 }
 .contact_banner .contact_info{
     color: white;
-    font-size: 2.25rem;
-    text-shadow: 0px 5px 4px 2px lightgray;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 
 /* contact_main_section */
 
 #contact_main_section{
-    width: 80%;
-    margin: 5rem auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 4rem auto;
 }
 .contact_main_container{
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
 }
 .contact_title{
     text-align: center;
     color: var(--main-color);
-    font-size: 2.25rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 .contact_subtitle{
-    color: gray;
+    color: #666;
     text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 .contacts_list{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4rem;
-   
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 2rem 0;
+}
+.contacts_list a {
+    text-decoration: none;
 }
 .contacts_list .contact_item{
-    width: 14.375rem;
-    height: 9.375rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1.25rem;
-    border-radius: 10px 3.125rem 10px 3.125rem;
-    padding: 2rem;
+    border-radius: 15px 50px 15px 50px;
+    padding: 2.5rem 2rem;
     background-color: #fff;
-    box-shadow: 0px 4px 4px 2px lightgray;
-
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+.contact_item:hover {
+    transform: translateY(-5px);
 }
 .contact_item .item_icon i{
-    font-size: 1.9rem;
-    color: gray;
+    font-size: 2.5rem;
+    color: #ffa500;
+}
+.contact_item .item_info {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
 /* contact_main_section end */
 .contacts_bottom_container{
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    justify-content: space-between;
     background-color: #fff;
-    box-shadow: 0px 4px 4px 2px lightgray;
-    padding: 1rem;
-    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    gap: 30px;
 }
 .contacts_bottom_container .live_chat{
-    width: 14.375rem;
-    height: 11.25rem;
-    box-shadow: 2px 4px 4px 2px var(--main-color);
-    border-radius: 10px;
-    border: 1px solid var(--main-color);
+    flex: 1;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    border: 1px solid #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
-    padding: 1rem;
-    position: relative;
-    top: -150px;
+    padding: 2rem;
+    text-align: center;
 }
 .live_chat .chat_icon img{
-    width: 6.25rem;
-    height: 3.75rem;
+    width: 80px;
+    height: auto;
 }
 .live_chat .chat_info{
     color: var(--main-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.middle_img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.middle_img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
 }
 
 .connect_part {
-    width: 30.625rem;
-    height: 29.375rem;
-    box-shadow: 2px 4px 4px 2px var(--main-color);
-    border-radius: 10px;
-    border: 1px solid var(--main-color);
-    padding: 2rem;
+    flex: 1.5;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.875rem;
-
+    gap: 1.5rem;
 }
 .connect_part .connect_title{
     color: var(--main-color);
-    font-size: 2.25rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     text-align: center;
+    margin-bottom: 0.5rem;
 }
-.connect_part .connect_inputs input{
+.connect_part .connect_inputs input,
+.connect_part .connect_inputs textarea{
     width: 100%;
-    height: 2.5rem;
-    border: 1px solid var(--main-color);
+    border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 10px;
-
+    padding: 12px 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+.connect_part .connect_inputs input:focus,
+.connect_part .connect_inputs textarea:focus {
+    border-color: #ffa500;
 }
 .connect_inputs textarea{
-    width: 100%;
-    height: 6.25rem;
-    border: 1px solid var(--main-color);
-    border-radius: 10px;
-    padding: 10px;
+    height: 120px;
     resize: none;
 }
 .connect_btn .btn{
     width: 100%;
-    height: 2.5rem;
-    border-radius: 0.625rem;
-    background-color: var(--some-cards_color);
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #ffa500;
     border: none;
     color: white;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background 0.3s;
 }
-@media (min-width:220px) and (max-width:1024px) {
-    .contacts_list{
-        flex-direction: column;
-        gap: 30px;
-    }
-    .contacts_bottom_container{
-        flex-direction: column;
-    }
-    
-}
-@media (min-width:300px) and (max-width:1024px){
-   .contacts_bottom_container .live_chat{
-    position: relative;
-    top: 0;
-   } 
-}
-@media (min-width:200px) and (max-width:600px){
-.middle_img img{
-    width: 250px;
-}
-.connect_part{
-    width: 90%;
-}
-.connect_part .connect_title{
-    font-size: 18px;
-}
+.connect_btn .btn:hover {
+    background-color: #ff8c00;
 }
 
-@media (min-width:1024px) and (max-width:1200px) {
-   .connect_part .connect_title{
-    font-size: 22px;
-   } 
+@media (max-width: 1200px) {
+    .contacts_bottom_container {
+        flex-direction: column;
+    }
+    .middle_img {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact_banner .contact_info {
+        font-size: 2.25rem;
+    }
+    .contact_title {
+        font-size: 2rem;
+    }
+    .contacts_list {
+        grid-template-columns: 1fr;
+    }
+    .connect_part {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact_banner_section,
+    #contact_main_section {
+        width: 95%;
+        margin: 2rem auto;
+    }
+    .contact_banner {
+        height: 15rem;
+    }
+    .contact_info {
+        font-size: 1.75rem;
+    }
 }

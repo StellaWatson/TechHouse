@@ -1,19 +1,19 @@
-#payment_header{
+#payment_simple_header {
     width: 80%;
-    margin: 3rem auto;
+    margin: 2rem auto;
     background-color: #fff;
     box-shadow: 0px 4px 4px 2px lightgray;
     border-radius: 10px;
-    height: 60px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.payment_header_container .header_item{
+.payment_header_container h1 {
     color: var(--main-color);
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 #must_filled_contents_section{
@@ -291,7 +291,7 @@
 
 /* Tablet Screens (768px and below) */
 @media (max-width: 768px) {
-    #payment_header,
+    #payment_simple_header,
     #must_filled_contents_section {
         width: 95%;
         margin: 2rem auto;
@@ -321,12 +321,12 @@
 
 /* Mobile Screens (480px and below) */
 @media (max-width: 480px) {
-    #payment_header {
-        height: 50px;
+    #payment_simple_header {
+        height: 60px;
         margin: 1.5rem auto;
     }
 
-    .payment_header_container .header_item {
+    .payment_header_container h1 {
         font-size: 18px;
     }
 

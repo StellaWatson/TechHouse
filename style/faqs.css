@@ -1,25 +1,53 @@
 
+#faq .title {
+    color: var(--main-color);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+#faq .subtitle {
+    color: gray;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
 #faq {
     width: 80%;
-    margin: 10rem auto;
+    margin: 6rem auto;
     max-width: 1440px;
-    
     background: #fff;
     padding: 40px;
     border-radius: 10px;
 }
 
-#faq .title {
-    text-align: center;
-    font-size: 36px;
-    color: var(--main-color);
-    margin-bottom: 2rem;
+@media screen and (max-width: 1024px) {
+    #faq {
+        width: 90%;
+        margin: 4rem auto;
+        padding: 30px;
+    }
 }
 
-.subtitle {
-    text-align: center;
-    color: #777;
-    margin-bottom: 5rem;
+@media screen and (max-width: 768px) {
+    #faq .title {
+        font-size: 28px;
+    }
+    .subtitle {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #faq {
+        width: 95%;
+        padding: 20px;
+    }
+    .faq-item label {
+        padding: 15px;
+        font-size: 14px;
+    }
 }
 
 .faq-item {

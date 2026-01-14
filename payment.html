@@ -13,104 +13,12 @@
     <link rel="stylesheet" href="style/footer.css">
 </head>
 <body>
-    <div id="top_header_section">
-        <div class="top_container">
-            <div class="topnav_items">
-                <div class="icon">
-                    <i class="bi bi-geo-alt"></i>
-                </div>
-                <div class="info">
-                    <p><a href="#">Location</a></p>
-                </div>
-            </div>
-            <div class="topnav_items">
-                <!-- <div class="icon">
-                    <i class="bi bi-geo-alt"></i>
-                </div> -->
-                <div class="info">
-                    <p><a href="#">Free shipping on orders over $500 | 24/7 Customer Support</a></p>
-                </div>
-            </div>
-            <div class="topnav_items">
-                <!-- <div class="icon">
-                    <i class="bi bi-geo-alt"></i>
-                </div> -->
-                <div class="info">
-                    <p><a href="#">Questions&Answers</a></p>
-                </div>
-            </div>
-            <div class="topnav_items">
-                <!-- <div class="icon">
-                    <i class="bi bi-geo-alt"></i>
-                </div> -->
-                <div class="info">
-                    <p><a href="#">My Orders</a></p>
-                </div>
-            </div>
-            <div class="topnav_items">
-                <div class="icon">
-                    <img src="img/united-states (2).png" alt="">
-                </div>
-                <div class="info">
-                    <p><a href="#">Eng</a></p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <header id="header_section">
-        <div class="header_container">
-            <div class="top_navigation">
-                <div class="logo">
-                    <img src="img/logo.png" alt="">
-                </div>
-                <nav class="header_nav" id="mobileMenu">
-                    <button class="close-menu" id="closeMenu">
-                        <i class="bi bi-x"></i>
-                    </button>
-                    <ul>
-                        <li class="nav_items"><a href="index.html">Home</a></li>
-                        <li class="nav_items"><a href="about.html">About</a></li>
-                        <li class="nav_items"><a href="services.html">Services</a></li>
-                        <li class="nav_items"><a href="products.html">Products</a></li>
-                        <li class="nav_items"><a href="locations.html">Locations</a></li>
-                        <li class="nav_items"><a href="contactUs.html">Contact us</a></li>
-                    </ul>
-                </nav>
-                <div class="icon_group">
-                    <div class="icon_items">
-                        <a href="favorites.html"><i class="bi bi-heart"></i></a>
-                    </div>
-                    <div class="icon_items">
-                        <a href="cart.html">
-                            <i class="bi bi-cart3"></i>
-                            <span class="cart-badge">4</span>
-                        </a>
-                    </div>
-                    <div class="icon_items">
-                        <a href="account.html"><i class="bi bi-person"></i></a>
-                    </div>
-                    <div class="icon_items menu" id="menuToggle">
-                        <i class="bi bi-list"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="search_section">
-                <div class="catalog">
-                    <img src="img/catalog 1.png" alt="">
-                </div>
-                <div class="search">
-                    <div class="icon">
-                        <i class="bi bi-search"></i>
-                    </div>
-                    <div class="input">
-                        <input type="text" placeholder="Search Products">
-                    </div>
-                </div>
-            </div>
+    <header id="payment_simple_header">
+        <div class="payment_header_container">
+            <h1>TechHouse Delivery</h1>
         </div>
     </header>
+
     <section id="must_filled_contents_section">
         <div class="must_filled_contents_container">
             <div class="must_filled_items">
@@ -155,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="taker_items">
+            <div class="taker_items" id="delivery_info_card">
                 <div class="taker_img">
                     <img src="img/delivery_img (1).png" alt="">
                 </div>
@@ -193,8 +101,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="payment_type_list">
                 <div class="payment_type_items">
                     <div class="payment_type_img">
                         <img src="img/dollar.png" alt="">
@@ -413,6 +319,7 @@
             </div>
         </div>
     </footer>
-    
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/payment.js"></script>
 </body>
 </html>

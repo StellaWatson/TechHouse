@@ -1,10 +1,39 @@
 #locations_section{
     width: 80%;
     max-width: 1440px;
-    margin: 5rem auto;
+    margin: 6rem auto;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 4px 4px 2px lightgray;
+}
+
+@media screen and (max-width: 1024px) {
+    #locations_section {
+        width: 90%;
+        margin: 4rem auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .locations_container {
+        padding: 1.5rem;
+    }
+    .locations_container .locations_title {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #locations_section {
+        width: 95%;
+        margin: 3rem auto;
+    }
+    .locations_container {
+        padding: 1rem;
+    }
+    .locations_card .left_location {
+        height: 250px;
+    }
 }
 .locations_container{
     width: 100%;

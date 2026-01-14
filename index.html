@@ -7,13 +7,14 @@
     <title>TechHouse</title>
     <!-- <link rel="" href="img/logo.png"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" /> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/top_header.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/banner.css">
     <link rel="stylesheet" href="style/adver.css">
-    <link rel="stylesheet" href="style/prodcuts.css">
+    <link rel="stylesheet" href="style/products.css">
     <link rel="stylesheet" href="style/loyalty.css">
     <link rel="stylesheet" href="style/comments.css">
     <link rel="stylesheet" href="style/faqs.css">
@@ -184,7 +185,7 @@
                     Hot Deals
                 </div>
                 <div class="view_products">
-                    <a href="#">View all products</a>
+                    <a href="products.html">View all products</a>
                 </div>
             </div>
 
@@ -360,7 +361,7 @@
                     Top Products
                 </div>
                 <div class="view_products">
-                    <a href="#">View all products</a>
+                    <a href="products.html">View all products</a>
                 </div>
             </div>
 
@@ -534,7 +535,7 @@
                     Smart Home Collection
                 </div>
                 <div class="view_products">
-                    <a href="#">View all products</a>
+                    <a href="products.html">View all products</a>
                 </div>
             </div>
 
@@ -708,7 +709,7 @@
                     Cleaning Appliances
                 </div>
                 <div class="view_products">
-                    <a href="#">View all products</a>
+                    <a href="products.html">View all products</a>
                 </div>
             </div>
 
@@ -1646,37 +1647,8 @@
         </div>
     </footer>
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const closeMenu = document.getElementById('closeMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-
-        // Open menu
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        // Close menu
-        const closeMenuFunc = () => {
-            mobileMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-
-        closeMenu.addEventListener('click', closeMenuFunc);
-        menuOverlay.addEventListener('click', closeMenuFunc);
-
-        // Close menu when clicking on nav links
-        const navLinks = document.querySelectorAll('.header_nav ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', closeMenuFunc);
-        });
-    </script>
-   
-  
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/home.js"></script>
 </body>
 
 </html>
