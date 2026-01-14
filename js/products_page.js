@@ -102,35 +102,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     categoryCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', (e) => {
-            const id = e.target.id;
-            const categorySection = e.target.closest('.by_category');
-            const categoryTitle = categorySection.querySelector('.category_title').textContent.trim().toLowerCase();
-            
-            let filterType = '';
-            if (categoryTitle.includes('category')) filterType = 'category';
-            else if (categoryTitle.includes('promotion')) filterType = 'promotion';
-            else if (categoryTitle.includes('origin')) filterType = 'origin';
-            else if (categoryTitle.includes('color')) filterType = 'color';
+            const filterType = e.target.dataset.filter;
+            const filterValue = e.target.id;
 
-            if (e.target.checked) {
-                activeFilters[filterType].push(id);
-            } else {
-                activeFilters[filterType] = activeFilters[filterType].filter(item => item !== id);
+            if (filterType && activeFilters.hasOwnProperty(filterType)) {
+                if (e.target.checked) {
+                    activeFilters[filterType].push(filterValue);
+                } else {
+                    activeFilters[filterType] = activeFilters[filterType].filter(item => item !== filterValue);
+                }
+                applyFilters();
             }
-            applyFilters();
         });
     });
 
     if (priceFromInput) {
         priceFromInput.addEventListener('input', (e) => {
-            activeFilters.price.min = parseFloat(e.target.value.replace('$', '')) || 0;
+            let val = parseFloat(e.target.value.replace(/[^0-9.]/g, ''));
+            activeFilters.price.min = isNaN(val) ? 0 : val;
             applyFilters();
         });
     }
 
     if (priceToInput) {
         priceToInput.addEventListener('input', (e) => {
-            activeFilters.price.max = parseFloat(e.target.value.replace('$', '')) || 1000;
+            let val = parseFloat(e.target.value.replace(/[^0-9.]/g, ''));
+            activeFilters.price.max = isNaN(val) ? 10000 : val; // Increased max price
             applyFilters();
         });
     }

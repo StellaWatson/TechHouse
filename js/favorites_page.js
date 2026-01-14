@@ -14,25 +14,25 @@ function renderFavorites() {
 
     if (favoriteProducts.length === 0) {
         favoritesContainer.innerHTML = `
-            <div style="width: 100%; text-align: center; padding: 3rem; grid-column: 1 / -1;">
-                <i class="bi bi-heart" style="font-size: 4rem; color: #ccc;"></i>
-                <h2 style="margin-top: 1rem; color: #666;">No favorites yet</h2>
-                <p style="color: #999;">Start adding products you love!</p>
-                <a href="products.html" class="view_products" style="margin-top: 1.5rem; display: inline-block; padding: 10px 30px; border: 1px solid var(--main-color); border-radius: 8px; color: var(--main-color); font-weight: 600;">Go Shopping</a>
+            <div class="empty-favorites">
+                <i class="bi bi-heart"></i>
+                <h2>No favorites yet</h2>
+                <p>Start adding products you love!</p>
+                <a href="products.html" class="go-shopping-btn">Go Shopping</a>
             </div>
         `;
         return;
     }
 
     favoritesContainer.innerHTML = favoriteProducts.map(product => `
-        <div class="products_card" data-id="${product.id}" onclick="location.href='product-details.html?id=${product.id}'" style="cursor: pointer;">
-            <div class="card_img">
+        <div class="products_card" data-id="${product.id}">
+            <div class="card_img" onclick="location.href='product-details.html?id=${product.id}'" style="cursor: pointer;">
                 <img src="${product.image}" alt="${product.name}">
             </div>
             <div class="item_icon_group">
                 <div class="status">${product.discount || 'New'}</div>
                 <div class="item_icon add-to-favorites-btn" data-id="${product.id}">
-                    <i class="bi bi-heart-fill" style="color: #ff4d4d;"></i>
+                    <i class="bi bi-heart-fill favorited"></i>
                 </div>
             </div>
             <div class="item_info">

@@ -32,55 +32,61 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <span class="reviews-count">(${product.reviews} reviews)</span>
                         <div class="divider"></div>
-                        <span class="orders-count">100+ orders</span>
+                        <span class="orders-count">${product.boughtThisWeek}+ bought this week</span>
                     </div>
                 </div>
                 
-                <div class="thumbnail-list">
-                    ${galleryImages.map((img, index) => `
-                        <div class="thumbnail-item ${index === 0 ? 'active' : ''}" data-index="${index}">
-                            <img src="${img}" alt="${product.name}">
-                        </div>
-                    `).join('')}
-                </div>
-                
-                <div class="main-image">
-                    <img src="${galleryImages[0]}" alt="${product.name}" id="mainImgDisplay">
+                <div class="gallery-wrapper">
+                    <div class="thumbnail-list">
+                        ${galleryImages.map((img, index) => `
+                            <div class="thumbnail-item ${index === 0 ? 'active' : ''}" data-index="${index}">
+                                <img src="${img}" alt="${product.name}">
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="main-image">
+                        <img src="${galleryImages[0]}" alt="${product.name}" id="mainImgDisplay">
+                    </div>
                 </div>
             </div>
 
             <div class="product-sidebar">
                 <div class="sidebar-price-section">
-                    <span class="sidebar-price-label">BEST PRICE GUARANTEE</span>
+                    <span class="sidebar-price-label">TECH HOUSE EXCLUSIVE</span>
                     <div class="sidebar-current-price">$${product.price}</div>
                     ${product.originalPrice ? `<div class="sidebar-old-price">$${product.originalPrice}</div>` : ''}
                 </div>
 
                 <div class="installment-banner">
                     <div class="installment-header">
+                        <span>From </span>
                         <span class="installment-value">$${(product.price / 12).toFixed(2)}/mo</span>
-                        <span>in installments</span>
                     </div>
-                    <div style="font-size: 12px; color: #8b8e99;">Pay in 12 interest-free payments</div>
+                    <div style="font-size: 12px; color: #666; margin-top: 5px;">Interest-free installment for 12 months</div>
                 </div>
 
                 <div class="sidebar-actions">
-                    <button class="btn-add-savat" id="addToCartBtn">Add to cart</button>
-                    <button class="btn-buy-now">Buy in 1 click</button>
+                    <button class="btn-add-savat" id="addToCartBtn">Add to Cart</button>
+                    <button class="btn-buy-now">Fast Checkout</button>
                 </div>
 
                 <div class="availability-info">
-                    <div class="info-item">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Available: ${product.itemsLeft} items</span>
-                    </div>
                     <div class="info-item">
                         <i class="bi bi-truck"></i>
                         <span>Free delivery by tomorrow</span>
                     </div>
                     <div class="info-item">
+                        <i class="bi bi-shop"></i>
+                        <span>Pick up today from 5 stores</span>
+                    </div>
+                    <div class="info-item">
                         <i class="bi bi-shield-check"></i>
-                        <span>1 year official warranty</span>
+                        <span>${product.warranty || '1 year official warranty'}</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-arrow-repeat"></i>
+                        <span>10 days easy return policy</span>
                     </div>
                 </div>
             </div>

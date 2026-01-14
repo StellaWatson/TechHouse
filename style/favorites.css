@@ -1,0 +1,42 @@
+.empty-favorites {
+    width: 100%;
+    text-align: center;
+    padding: 3rem;
+    grid-column: 1 / -1;
+}
+
+.empty-favorites i {
+    font-size: 4rem;
+    color: #ccc;
+}
+
+.empty-favorites h2 {
+    margin-top: 1rem;
+    color: #666;
+}
+
+.empty-favorites p {
+    color: #999;
+}
+
+.empty-favorites .go-shopping-btn {
+    margin-top: 1.5rem;
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid var(--main-color);
+    border-radius: 8px;
+    color: var(--main-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.empty-favorites .go-shopping-btn:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.item_icon i.favorited {
+    color: #ff4d4d;
+    -webkit-text-stroke: 1px #ff4d4d;
+}
+

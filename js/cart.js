@@ -1,22 +1,27 @@
 import { updateCartBadge } from './main.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const cartProductsContainer = document.querySelector('.cart_products');
+    const cartProductsContainer = document.querySelector('.cart_products_items_container');
     const totalItemsBadge = document.querySelector('.cartitems');
-    const subtotalDisplay = document.querySelector('.calc_subtitle .left'); // Adjust selector as needed
+    const subtotalDisplay = document.querySelector('.calc_subtitle .left');
     const totalDisplay = document.querySelectorAll('.calc_subtitle .left')[1];
 
     function renderCart() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         totalItemsBadge.textContent = `${cart.length} items`;
 
-        // Clear existing items except title
-        const title = cartProductsContainer.querySelector('.cart_products_title');
+        if (!cartProductsContainer) return;
         cartProductsContainer.innerHTML = '';
-        if (title) cartProductsContainer.appendChild(title);
 
         if (cart.length === 0) {
-            cartProductsContainer.innerHTML += '<div class="cart_products_items">Your cart is empty</div>';
+            cartProductsContainer.innerHTML = `
+                <div class="empty-cart">
+                    <i class="bi bi-cart-x"></i>
+                    <h2>Your cart is empty</h2>
+                    <p>Looks like you haven't added anything to your cart yet.</p>
+                    <a href="products.html" class="go-shopping-btn">Explore Products</a>
+                </div>
+            `;
             updateSummary(0);
             return;
         }
@@ -30,23 +35,26 @@ document.addEventListener('DOMContentLoaded', () => {
             totalPrice += product.price * quantity;
 
             const itemHtml = `
-                <div class="cart_products_items">
-                    <div class="cart_products_items_title">We will deliver it tomorrow</div>
+                <div class="cart_products_items" data-id="${product.id}">
+                    <div class="cart_products_items_title">Delivering Tomorrow</div>
                     <div class="cart_product">
                         <div class="cart_select">
                             <input type="checkbox" checked>
                         </div>
                         <div class="cart_products_list">
-                            <div class="cart_products_img">
+                            <div class="cart_products_img" onclick="location.href='product-details.html?id=${product.id}'" style="cursor: pointer;">
                                 <img src="${product.image}" alt="${product.name}">
                             </div>
                             <div class="cart_products_info">
-                                <div class="product_name">${product.name}</div>
-                                <div class="product_des">${product.description || ''}</div>
+                                <div class="product_header">
+                                    <div class="product_name" onclick="location.href='product-details.html?id=${product.id}'" style="cursor: pointer;">${product.name}</div>
+                                    <button class="remove-item" data-id="${product.id}"><i class="bi bi-trash"></i></button>
+                                </div>
+                                <div class="product_des">${product.description || 'Quality tech product'}</div>
                                 <div class="delivery_more_info">
                                     <div class="quantity">
                                         <button class="decrease" data-id="${product.id}">-</button>
-                                        <button>${quantity}</button>
+                                        <span class="qty-val">${quantity}</span>
                                         <button class="increase" data-id="${product.id}">+</button>
                                     </div>
                                     <div class="product_price">$${(product.price * quantity).toFixed(2)}</div>
@@ -85,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addEventListeners() {
         document.querySelectorAll('.increase').forEach(btn => {
-            btn.addEventListener('click', () => {
+            btn.onclick = () => {
                 const id = parseInt(btn.dataset.id);
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const product = cart.find(p => p.id === id);
@@ -93,21 +101,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('cart', JSON.stringify(cart));
                 renderCart();
                 updateCartBadge();
-            });
+            };
         });
 
         document.querySelectorAll('.decrease').forEach(btn => {
-            btn.addEventListener('click', () => {
+            btn.onclick = () => {
                 const id = parseInt(btn.dataset.id);
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const index = cart.findIndex(p => p.id === id);
+                const index = cart.findLastIndex(p => p.id === id);
                 if (index > -1) {
                     cart.splice(index, 1);
                     localStorage.setItem('cart', JSON.stringify(cart));
                     renderCart();
                     updateCartBadge();
                 }
-            });
+            };
+        });
+
+        document.querySelectorAll('.remove-item').forEach(btn => {
+            btn.onclick = () => {
+                const id = parseInt(btn.dataset.id);
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart = cart.filter(p => p.id !== id);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCart();
+                updateCartBadge();
+            };
         });
     }
 
