@@ -248,20 +248,25 @@
 }
 
 .logout_btn {
-    background-color: #ff4d4d;
+    background-color: #ffa500;
     color: #fff;
     border: none;
-    padding: 12px 30px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
-    transition: opacity 0.3s;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    width: 20%;
+    display: block;
+    text-align: center;
 }
 
 .logout_btn:hover {
-    opacity: 0.8;
+    background-color: #e69500;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Responsive */
@@ -289,6 +294,10 @@
     .form_row {
         grid-template-columns: 1fr;
     }
+    .logout_btn{
+        width: 350px;
+        padding: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -311,5 +320,9 @@
     
     .detail_value {
         font-size: 14px;
+    }
+    .logout_btn{
+        width: 250px;
+        padding: 10px;
     }
 }
