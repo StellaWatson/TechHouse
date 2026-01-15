@@ -276,12 +276,9 @@ export function updateFavoriteIcons() {
 
         if (productId) {
             if (favorites.includes(productId)) {
-                icon.classList.remove('bi-heart');
-                icon.classList.add('bi-heart-fill');
-                icon.style.color = '#ff4d4d';
+                icon.classList.add('favorited');
             } else {
-                icon.classList.add('bi-heart');
-                icon.classList.remove('bi-heart-fill');
+                icon.classList.remove('favorited');
                 icon.style.color = '';
             }
         }

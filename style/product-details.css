@@ -221,7 +221,6 @@
 .availability-info {
     margin-top: 24px;
     padding-top: 24px;
-    border-top: 1px solid #eee;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -231,14 +230,16 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    color: #333;
     font-weight: 500;
 }
 
 .info-item i {
-    font-size: 20px;
-    color: var(--some-cards_color);
+    font-size: 22px;
+    color: #28a745;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -315,33 +316,54 @@
 }
 
 .related-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
-@media (max-width: 1200px) {
-    .related-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.related-grid .products_card {
+    width: 350px !important;
+    max-width: 100%;
+    padding: 20px;
 }
 
-@media (max-width: 768px) {
-    .related-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.related-grid .item_info_title {
+    font-size: 22px;
+    margin-bottom: 12px;
 }
 
-@media (max-width: 480px) {
-    .related-grid {
-        grid-template-columns: 1fr;
-    }
+.related-grid .itemPriceAndRate {
+    margin-bottom: 15px;
 }
 
+.related-grid .price .current {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.related-grid .howManyLeft {
+    margin-bottom: 10px;
+}
+
+.related-grid .item_button .btn {
+    height: 55px;
+    font-size: 18px;
+    margin-top: 10px;
+}
 
 /* Responsive */
+@media screen and (max-width: 1200px) {
+    .related-grid {
+        gap: 20px;
+    }
+    .related-grid .products_card {
+        width: calc(50% - 20px) !important;
+    }
+}
 @media screen and (max-width: 1024px) {
-    #product-details-container.uzum-layout {
+    #product-details-container {
         width: 90%;
         flex-direction: column;
         gap: 24px;
@@ -352,9 +374,18 @@
         width: 100%;
         position: static;
     }
+
+    .main-image img {
+        height: 350px;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    #product-details-container, #product-extra-info, #related-products-section {
+        width: 95%;
+        padding: 15px;
+    }
+
     .product-main-content {
         flex-direction: column;
     }
@@ -369,55 +400,59 @@
     
     .thumbnail-item {
         flex: 0 0 60px;
-        height: 80px;
+        height: 60px;
     }
     
+    .gallery-wrapper {
+        flex-direction: column;
+    }
+
     .main-image {
         order: 1;
-        max-width: 100%;
+        width: 100%;
     }
     
     .main-image img {
-        height: 350px;
+        height: 300px;
     }
-    
-    #product-extra-info, #related-products-section {
-        width: 90%;
-        padding: 20px;
+
+    .product-gallery-header h1 {
+        font-size: 24px;
+    }
+
+    .sidebar-current-price {
+        font-size: 28px;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 480px) {
-    #product-details-container.uzum-layout {
-        width: 95%;
-        padding: 15px;
-    }
-    
-    .product-gallery-header h1 {
-        font-size: 20px;
-    }
-    
     .header-meta {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 8px;
+    }
+
+    .header-meta .divider {
+        display: none;
+    }
+
+    .tabs-container {
+        gap: 20px;
+    }
+
+    .tab-btn {
+        font-size: 16px;
+    }
+    
+    .related-grid {
+        grid-template-columns: 1fr;
     }
     
     .main-image img {
         height: 250px;
-    }
-    
-    #product-extra-info, #related-products-section {
-        width: 95%;
-        padding: 15px;
-    }
-    
-    .tabs-container {
-        gap: 16px;
-        overflow-x: auto;
-    }
-    
-    .tab-btn {
-        font-size: 14px;
-        white-space: nowrap;
     }
 }

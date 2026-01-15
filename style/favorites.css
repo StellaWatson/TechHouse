@@ -36,7 +36,7 @@
 }
 
 .item_icon i.favorited {
-    color: #ff4d4d;
-    -webkit-text-stroke: 1px #ff4d4d;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #000;
 }
 

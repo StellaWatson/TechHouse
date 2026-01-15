@@ -32,7 +32,7 @@ function renderFavorites() {
             <div class="item_icon_group">
                 <div class="status">${product.discount || 'New'}</div>
                 <div class="item_icon add-to-favorites-btn" data-id="${product.id}">
-                    <i class="bi bi-heart-fill favorited"></i>
+                    <i class="bi bi-heart favorited"></i>
                 </div>
             </div>
             <div class="item_info">

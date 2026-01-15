@@ -73,20 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <div class="availability-info">
                     <div class="info-item">
+                        <i class="bi bi-check-circle"></i>
+                        <span>Available: ${product.itemsLeft} items</span>
+                    </div>
+                    <div class="info-item">
                         <i class="bi bi-truck"></i>
                         <span>Free delivery by tomorrow</span>
                     </div>
                     <div class="info-item">
-                        <i class="bi bi-shop"></i>
-                        <span>Pick up today from 5 stores</span>
-                    </div>
-                    <div class="info-item">
                         <i class="bi bi-shield-check"></i>
                         <span>${product.warranty || '1 year official warranty'}</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="bi bi-arrow-repeat"></i>
-                        <span>10 days easy return policy</span>
                     </div>
                 </div>
             </div>
@@ -159,36 +155,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderRecommend(category, currentId) {
-        const related = products.filter(p => p.category === category && p.id !== currentId).slice(0, 3);
+        let related = products.filter(p => p.category === category && p.id !== currentId);
+        
+        // If not enough related products in the same category, add from others
+        if (related.length < 2) {
+            const others = products.filter(p => p.category !== category && p.id !== currentId);
+            related = [...related, ...others].slice(0, 2);
+        } else {
+            related = related.slice(0, 2);
+        }
+
         if (related.length === 0) {
             document.getElementById('related-products-section').style.display = 'none';
             return;
         }
 
-        relatedGrid.innerHTML = related.map(p => `
+        relatedGrid.innerHTML = related.map((p, index) => {
+            // Mock some labels to match the image
+            const mockLabels = ["best", "28% OFF", "new", "top"];
+            const label = p.promotion ? (p.promotion === 'sale' ? p.discount : p.promotion) : mockLabels[index % mockLabels.length];
+
+            return `
             <div class="products_card" onclick="location.href='product-details.html?id=${p.id}'" style="cursor: pointer;">
                 <div class="card_img">
                     <img src="${p.image}" alt="${p.name}">
                 </div>
                 <div class="item_icon_group">
-                    <div class="status">${p.discount || 'New'}</div>
+                    <div class="status">${label}</div>
                     <div class="item_icon"><i class="bi bi-heart"></i></div>
                 </div>
                 <div class="item_info">
                     <div class="item_info_title">${p.name}</div>
                     <div class="itemPriceAndRate">
-                        <div class="price">$${p.price} ${p.originalPrice ? `<span class="lined">$${p.originalPrice}</span>` : ''}</div>
+                        <div class="price">
+                            <span class="current">$${p.price}</span>
+                            ${p.originalPrice ? `<span class="lined">$${p.originalPrice}</span>` : ''}
+                        </div>
                         <div class="rate">
                             <div class="start_rate"><i class="bi bi-star-fill"></i></div>
                             <div class="rate_num">${p.rating}(${p.reviews})</div>
                         </div>
                     </div>
                     <div class="howManyLeft">
-                        <div class="left_icon"><img src="img/check.png" alt=""></div>
+                        <div class="left_icon"><i class="bi bi-check-square-fill" style="color: #28a745; font-size: 1.2rem;"></i></div>
                         <div class="left_info">${p.itemsLeft} items left</div>
                     </div>
                     <div class="howManyLeft">
-                        <div class="left_icon"><img src="img/approved.png" alt=""></div>
+                        <div class="left_icon"><i class="bi bi-person" style="font-size: 1.2rem; font-weight: bold;"></i></div>
                         <div class="left_info">${p.boughtThisWeek} people bought in this week</div>
                     </div>
                     <div class="item_button">
@@ -196,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             </div>
-        `).join('');
+        `}).join('');
 
         relatedGrid.querySelectorAll('.add-to-cart-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
