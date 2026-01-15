@@ -242,8 +242,10 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .products_card {
         width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
 }
